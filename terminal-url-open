@@ -1,0 +1,20 @@
+#!/usr/bin/env python3
+
+import sys
+import subprocess
+import urllib.parse
+
+TERM_RUN_SCHEME_PREFIX = 'termrun://'
+
+if len(sys.argv) != 2:
+    sys.exit(1)
+
+s = urllib.parse.unquote_plus(sys.argv[1])
+
+if s[:len(TERM_RUN_SCHEME_PREFIX)] != TERM_RUN_SCHEME_PREFIX:
+    subprocess.run(['xdg-open', sys.argv[1]])
+    sys.exit()
+
+s = s[len(TERM_RUN_SCHEME_PREFIX):] + ';\nbash'
+
+subprocess.run(['bash', '-c', s])

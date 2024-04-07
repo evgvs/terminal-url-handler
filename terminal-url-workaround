@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+
+import sys
+import subprocess
+import urllib.parse
+
+TERM_SCHEME_PREFIX = 'term://'
+TERM_RUN_SCHEME_PREFIX = 'termrun://'
+
+
+if len(sys.argv) != 2:
+    sys.exit(1)
+
+s = sys.argv[1]
+
+if s[:len(TERM_SCHEME_PREFIX)] != TERM_SCHEME_PREFIX:
+    subprocess.run(['xdg-open', sys.argv[1]])
+    sys.exit()
+
+s = TERM_RUN_SCHEME_PREFIX + s[len(TERM_SCHEME_PREFIX):]
+
+
+subprocess.run(['env', '-u', 'LD_LIBRARY_PATH','xdg-open', s])

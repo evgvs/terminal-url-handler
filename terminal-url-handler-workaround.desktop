@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Terminal URL Scheme Handler
+Terminal=false
+Exec=/usr/local/bin/terminal-url-workaround %u
+StartupNotify=false
+MimeType=x-scheme-handler/term;

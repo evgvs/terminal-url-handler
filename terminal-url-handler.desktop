@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Terminal URL Scheme Handler Runner
+Terminal=true
+Exec=/usr/local/bin/terminal-url-open %u
+StartupNotify=false
+MimeType=x-scheme-handler/termrun;
