@@ -20,7 +20,8 @@ if s[-1] == '\n':
     s = s[:-1]
 
 print('=====')
-print(repr(s)[1:-1])
+for line in s.split('\n'):
+    print(repr(line)[1:-1])
 a = input('=====\nDo you really want to run this script? [Y/n]').strip()
 
 if a.lower() not in ['', 'y', 'yes']:
