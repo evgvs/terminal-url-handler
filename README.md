@@ -30,7 +30,7 @@ xdg-open 'term://ls%20-lah%20/usr/bin'
 xdg-open 'term://ls -lah /usr/bin'
 ```
 
-You can also embed links 
+You can also [embed links on your website](https://evgvs.com/termhandler.html).
 
 ## What "workaround" is used?
 
